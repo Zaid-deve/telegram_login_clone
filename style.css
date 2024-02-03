@@ -1,0 +1,438 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+}
+
+body {
+    height: 100vh;
+    background: #212121;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+    display: none;
+}
+
+.btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+body .tg-box {
+    max-width: 380px;
+    width: 100%;
+    margin: auto;
+    margin-block: 30px;
+    border-radius: 6px;
+    padding: 22px 32px;
+    position: relative;
+}
+
+.tg-header .btn i {
+    font-size: 21px;
+    color: #eee;
+}
+
+.tg-header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.tg-header .tg-header-label {
+    margin-right: auto;
+    font-size: 19px;
+    font-weight: 500;
+    color: #eee;
+    transform: scale(0) translateX(40px);
+    transform-origin: right center;
+}
+
+.tg-header .btn-search {
+    transform: scale(0) translateX(40px);
+    transform-origin: right center;
+}
+
+.tg-header.show :where(.tg-header-label, .btn-search) {
+    transition: all .16s ease;
+    transform: scale(1);
+}
+
+.tg-header .btn-search i {
+    font-size: 18px;
+}
+
+.tg-box .tg-main-text {
+    margin-top: 38px;
+    text-align: center;
+}
+
+.tg-main-text .tg-header-text {
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 600;
+}
+
+.tg-main-text .tg-header-text2 {
+    font-size: .92em;
+    color: #d8d7d7;
+    line-height: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.tg-box .tg-fields {
+    margin-top: 32px;
+    display: grid;
+    gap: 16px;
+}
+
+.tg-fields .tg-field {
+    display: flex;
+    align-items: center;
+    border: 1px solid #888888;
+    border-radius: 9px;
+    height: 42px;
+    padding: 0 12px;
+    position: relative;
+}
+
+.tg-fields .tg-field-1 {
+    gap: 16px;
+    cursor: pointer;
+}
+
+.tg-field-1 .tg-field-left img {
+    width: 18px;
+}
+
+.tg-field-1 .tg-field-left {
+    transition: translateY .16s ease;
+}
+
+.tg-field-country {
+    width: 100%;
+    transition: all .16s ease;
+}
+
+.tg-field-1.hide :where(.tg-field-left, .tg-field-country) {
+    transform: translateY(40px) scale(0);
+}
+
+.tg-field-1.hide label {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.tg-field-country span {
+    font-weight: 700;
+    color: #eee;
+}
+
+.btn-toggle-country-list {
+    margin-left: auto;
+}
+
+.btn-toggle-country-list i {
+    font-size: 21px;
+    color: #eee;
+}
+
+.tg-field label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #212121;
+    color: #888888;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 7px;
+    transition: all .22s ease;
+}
+
+.tg-field-2 input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 19px;
+    font-weight: 550;
+    color: #eee;
+}
+
+.tg-field-2 .tg-field-left {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: fit-content;
+}
+
+.tg-field-2 .tg-field-left>span {
+    font-size: 21px;
+    font-weight: 550;
+    color: #eee;
+}
+
+.tg-field-2 #tg-country-code {
+    width: 50px;
+    height: 20px;
+}
+
+.tg-field-2 .tg-field-inp {
+    width: 100%;
+}
+
+.tg-field-inp input {
+    width: 100%;
+    height: 22px;
+    border-left: 1px solid #888888;
+    padding: 0 9px;
+}
+
+.tg-contacts-label {
+    margin-top: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+}
+
+.tg-contacts-label input {
+    transform: scale(1.2);
+    display: block;
+    accent-color: rgb(96, 176, 255);
+}
+
+.tg-contacts-label label {
+    color: #eee;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+#tg-phone-number {
+    font-size: 18px;
+}
+
+.tg-btn-submit,.tg-check-data
+{
+    display: block;
+    margin-left: auto;
+    padding: 11px 13.5px;
+    background: dodgerblue;
+    border-radius: 50%;
+}
+:where(.tg-btn-submit, .tg-check-data) i{
+    font-size: 20px;
+    color: #eee;
+    transform: translateY(10px);
+}
+
+:where(.tg-btn-submit, .tg-check-data) i.ri-loader-4-line{
+    animation: spin .1s ease;
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+.tg-num-btns {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+}
+
+.tg-num-btns .btn {
+    background: #42455a;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 16px;
+}
+
+.tg-num-btns .btn:hover {
+    background: #c5b8b880;
+}
+
+.tg-num-btns .btn h3 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #eee;
+    margin-right: auto;
+}
+
+.tg-num-btns .btn span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #afafaf;
+}
+
+.btn-tg-clear i {
+    font-size: 20px;
+    color: #eee;
+}
+
+.tg-field:focus-within {
+    border-color: dodgerblue;
+}
+
+.tg-field:focus-within label {
+    color: rgb(128, 190, 253);
+}
+
+.country-list-box {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+    background: #212121;
+    height: calc(100% - 60px);
+    transition: all .24s linear;
+    width: 100%;
+    border-radius: inherit;
+}
+
+.country-list-box .country-list {
+    height: 100%;
+    list-style: none;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.country-list::-webkit-scrollbar-track {
+    width: 6px;
+}
+
+.country-list li {
+    display: flex;
+    align-items: center;
+    color: #eee;
+    gap: 18px;
+    cursor: pointer;
+    padding: 9px 28px;
+    transition: all .16s ease;
+}
+
+.country-list li .country-list-name {
+    text-transform: capitalize;
+    font-size: 16px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.country-list li:hover {
+    background: #5c5c5c80;
+}
+
+.country-list li .country-list-code {
+    margin-left: auto;
+    color: rgb(101, 177, 253);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.country-list li #country-list-icon {
+    transform: rotate(4deg);
+    height: 20px !important;
+}
+
+.country-list-box.hide {
+    display: none;
+    left: 200%;
+}
+
+.tg-field.toggle {
+    animation: toggle .05s ease;
+}
+
+@keyframes toggle {
+    0% {
+        transform: translateX(10px);
+    }
+
+    33% {
+        transform: translateX(-10px);
+    }
+
+    66% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.confirm-outer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 33, 33,.2);
+    backdrop-filter: blur(25px);
+    border-radius: inherit;
+    z-index: 1004;
+    transition: all .2s ease;
+    transform: scale(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.confirm-outer .confirm-box{
+    max-width: 280px;
+    width: 100%;
+    border-radius: 8px;
+    background: #3d3d3d;
+    padding-block: 16px 4px;
+}
+.confirm-header p{
+    font-size: 13px;
+    font-weight: 500;
+    color:#afafaf;
+    padding-inline: 22px;
+}
+.check-btn-outer {
+    max-width: 280px;
+    width: 100%;
+    display: flex;
+}
+.confirm-outer .tg-check-data{
+    margin-top: 12px;
+    margin-left:auto;
+}
+
+.confirm-box .confirm-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: #eee;
+    padding-inline: 22px;
+}
+.confirm-box .confirm-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 7px;
+    padding-bottom: 7px;
+}
+.confirm-btns .btn{
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(98, 176, 255);
+    margin-top: 12px;
+    padding: 4px 22px;
+    transition: all .22s ease;
+    border-radius: 6px;
+}
+.confirm-btns .btn:hover {
+    background: rgba(98, 176, 255,.4);
+}
+body .confirm-outer.show {
+    transform: scale(1) !important;
+}

@@ -1,0 +1,72 @@
+.otp-header .btn {
+    text-decoration: none;
+    color: #fff;
+}
+.otp-header .btn i{
+    font-size: 24px;
+}
+.otp-wrapper-body{
+    text-align: center;
+    padding-top: 12px;
+}
+.otp-wrapper-body h3 {
+    font-size: 18px;
+    color: #eee;
+    font-weight: 600;
+}
+.otp-wrapper-body p{
+    font-size: 14px;
+    margin-top: 8px;
+    color: #979494;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.otp-box-grid{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 42px;
+    padding: 30px;
+    gap: 12px;
+}
+.otp-box-grid span{
+    border: 1.5px solid #727070;
+    border-radius: 6px;
+    transition: all .16s ease;
+    font-size: 19px;
+    color: #eee;
+    font-weight: 600;
+    line-height: 42px;
+    text-align: center;
+}
+.otp-box-grid span:is(.active,:focus){
+    border-color: rgb(85, 169, 253);
+}
+.otp-wrapper .msg-body {
+    margin-top: 70px;
+    text-align: center;
+    overflow: hidden;
+    height: 35px;
+    position: relative;
+}
+.msg-body :where(.btn,.err){
+    transition: all .2s ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+.msg-body .btn-send-call {
+    font-size: 17px;
+    color: dodgerblue;
+    font-weight: 500;
+}
+.msg-body .err {
+    font-size: 17px;
+    color: orangered;
+    font-weight: 500;
+}
+.msg-body :where(.err,.btn):is(.hide){
+    top: 120px;
+}
