@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Roboto", serif;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-size: 1em;
 }
 
 body {
@@ -241,6 +243,7 @@ body .tg-box {
     margin-top: 16px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 42px;
     gap: 7px;
 }
 
